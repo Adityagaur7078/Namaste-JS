@@ -1,0 +1,239 @@
+# Episode 1: How JavaScript Works!
+
+## Execution Context
+
+- Everything in JavaScript happens inside the **execution context**.
+- The execution context is like a **big box or container** where the JavaScript code is executed.
+- It consists of **two components**:
+  - Memory Component (Variable Environment)
+  - Code Component (Thread of Execution)
+
+---
+
+## Memory Component (Variable Environment)
+
+- Variables and functions are stored in the **memory component**.
+- They are stored as **key-value pairs**.
+- The memory component is also known as the **variable environment**.
+
+---
+
+## Code Component (Thread of Execution)
+
+- The code component is where the JavaScript code is executed **line by line**.
+- It is also known as the **thread of execution**.
+
+---
+
+## JavaScript Characteristics
+
+JavaScript is a **synchronous single-threaded language**.
+
+### Synchronous
+- It executes **one command at a time**.
+- Commands are executed in a **specific order**.
+- It proceeds to the next line only when the **current line has finished executing**.
+
+### Single-Threaded
+- JavaScript can execute **only one command at a time**.
+
+
+
+
+
+
+
+
+
+
+# Episode 2: How JavaScript Code is Executed?
+
+## Execution Context and Phases
+
+- JavaScript code is executed inside **execution contexts**.
+- Execution contexts have **two phases**:
+  1. Memory Creation Phase
+  2. Code Execution Phase
+
+---
+
+## Memory Creation Phase
+
+- In the memory creation phase, **memory is allocated** to variables and functions.
+- Variables are assigned the value **undefined**.
+- Functions are stored in memory **as they are**.
+
+---
+
+## Code Execution Phase
+
+- In the code execution phase, the code is executed **line by line**.
+- Variables created in the Memory Creation Phase start **assigning values** as the code executes.
+- Functions are invoked by creating a **new execution context**.
+- Every execution context has its **own memory component and code component**.
+- Code inside the function is executed.
+- `return` statements return control to the **invoking execution context**.
+- Return values are stored in memory **if stored in a variable**.
+- After the function finishes execution, its **execution context is deleted**.
+
+---
+
+## Execution Context Working
+
+- JavaScript first creates the **Global Execution Context (GEC)**.
+- When a function is called, a **new Function Execution Context (FEC)** is created.
+- Each execution context contains:
+  - Memory Component
+  - Code Component
+- After execution, control goes back to the previous execution context.
+
+---
+
+## Call Stack
+
+- The **call stack** manages all execution contexts.
+- The call stack is also known as:
+  - Execution Context Stack
+  - Program Stack
+  - Control Stack
+  - Runtime Stack
+  - Machine Stack
+- It maintains the **order of execution** of execution contexts.
+- Each new execution context is **pushed** onto the stack.
+- The **topmost execution context** is the one currently being executed.
+- The **bottom execution context** is always the **Global Execution Context (GEC)**.
+- Other execution contexts are **Function Execution Contexts (FEC)**.
+- When a function finishes execution, its execution context is **popped** from the stack.
+- Eventually, the **Global Execution Context is also popped**, and the execution of the program is completed.
+
+
+
+
+# Episode 3: Hoisting in JavaScript!
+
+> **Note:** Everything in this episode is intuitive.
+> If you feel any difficulty in understanding, consider watching **Episode 2** first.
+
+---
+
+## What is Hoisting?
+
+Hoisting is a concept in JavaScript that allows variables and function declarations to be accessed **before they are actually defined** in the code.
+
+During the **memory creation phase** of the execution context:
+
+* Variables are initialized with the value **undefined**
+* Function declarations are stored in memory **as they are**
+
+---
+
+## Hoisting in Simple Points
+
+* Variables are initialized as **undefined** during the memory allocation phase.
+* Function declarations are stored in memory **as they are**.
+* Hoisting allows us to:
+
+  * Use variables
+  * Call functions
+    **before they are declared in the code**
+* Using a variable before its declaration does **not throw an error**, but its value will be **undefined** until it is assigned.
+* If a variable is **not declared at all**, it is considered **not defined** and accessing it will result in an error.
+* Hoisting works differently for:
+
+  * Function declarations
+  * Function expressions
+  * Arrow function expressions
+* Function declarations are **fully hoisted**.
+* Function expressions and arrow functions behave like variables and are hoisted with the value **undefined**.
+
+---
+
+## Memory Aid (Easy to Remember)
+
+* Variable declarations are scanned and are made **undefined**
+* Function declarations are scanned and are made **available**
+
+---
+
+## Examples of Hoisting
+
+---
+
+### Example 1
+
+```js
+getName(); // Namaste Javascript
+console.log(x); // undefined
+
+var x = 7;
+
+function getName() {
+    console.log('Namaste Javascript');
+}
+```
+
+**Try to understand by yourself**
+
+#### Technical Language (Use this in Interviews)
+
+* The `getName()` function is called before its declaration, but it works because **function declarations are hoisted**.
+* The variable `x` is also hoisted, but it is assigned the value **undefined** until the line `var x = 7` is executed.
+
+---
+
+### Example 2
+
+```js
+getName(); // Namaste JavaScript
+console.log(x); // Uncaught ReferenceError: x is not defined
+console.log(getName); // f getName(){ console.log("Namaste JavaScript"); }
+
+function getName() {
+    console.log('Namaste JavaScript');
+}
+```
+
+**Try to understand by yourself**
+
+#### Technical Language (Use this in Interviews)
+
+* The `getName()` function executes successfully because **function declarations are hoisted**.
+* The variable `x` throws an error because it is **not declared at all**.
+* `console.log(getName)` prints the **entire function definition**, showing that the function is available in memory.
+
+---
+
+### Example 3
+
+```js
+getName(); // Uncaught TypeError: getName is not a function
+console.log(getName);
+
+var getName = function () {
+    console.log('Namaste JavaScript');
+};
+
+// The code won't execute as the first line itself throws a TypeError.
+```
+
+**Try to understand by yourself**
+
+#### Technical Language (Use this in Interviews)
+
+* Here, `getName` is a **function expression**, not a function declaration.
+* During hoisting, `getName` is treated like a variable and is assigned the value **undefined**.
+* Calling `getName()` before assignment causes a **TypeError**, because `undefined` is not a function.
+* `console.log(getName)` prints **undefined**.
+* Execution stops at the first line due to the error, so the function is never assigned.
+
+---
+
+## Important Note
+
+* Function declarations are **fully hoisted**.
+* Function expressions and arrow functions are hoisted like variables and get the value **undefined**.
+* Understanding this difference is very important for:
+
+  * Debugging
+  * Interviews
+  * Writing clean JavaScript code
