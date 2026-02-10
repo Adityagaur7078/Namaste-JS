@@ -340,18 +340,18 @@ function b() {
 
 ## JavaScript Shortest Program
 
-The shortest JavaScript program is an empty file. Although there is no code to execute, the JavaScript engine performs several tasks behind the scenes.
+- The shortest JavaScript program is an empty file. Although there is no code to execute, the JavaScript engine performs several tasks behind the scenes.
 
-A global execution context is created, and the global memory component (variable environment) is set up.
+- A global execution context is created, and the global memory component (variable environment) is set up.
 
-The JavaScript engine creates a global object called "Window" in the browser environment, which contains various functions and variables.
+- The JavaScript engine creates a global object called "Window" in the browser environment, which contains various functions and variables.
 
-The global object can be accessed using the Window keyword or this keyword at the global level  
+- The global object can be accessed using the Window keyword or this keyword at the global level  
 (or At global level, this === window).
 
-If we create any variable in the global scope, then the variables get attached to the global object.
+- If we create any variable in the global scope, then the variables get attached to the global object.
 
-In different JavaScript Runtime Environments, the global object may have different names  
+- In different JavaScript Runtime Environments, the global object may have different names  
 (e.g., window in browsers, global in Node.js).
 
 ## Code
@@ -361,7 +361,7 @@ var x = 10;
 console.log(x); // 10
 console.log(this.x); // 10
 console.log(window.x); // 10
-
+```
 
 ## Extra Gyaan (Knowledge)
 
@@ -370,3 +370,68 @@ console.log(window.x); // 10
 - This local object is created specifically for the execution context of the function.
 - It contains local variables, function arguments, and function declarations within that scope.
 - In JavaScript, there is no direct or explicit access to the activation context (variable object) from outside the execution context itself.
+
+
+
+
+
+
+
+
+
+# Episode 6: undefined vs not defined in JS
+
+## Memory Allocation in JavaScript
+
+- JavaScript allocates memory to variables and functions before executing any code.
+
+E- ven before a line of code is run, memory space is reserved for variables.
+
+- The value of a variable that hasn't been assigned is `undefined`.
+
+- `undefined` acts as a placeholder or default value in memory until a variable is assigned a different value.
+
+---
+
+## Difference between undefined and not defined
+
+- `undefined` means that memory has been allocated to a variable but no value has been assigned yet.
+- `not defined` refers to a variable that has not been declared or allocated any memory.
+
+---
+
+## undefined vs Empty
+
+- `undefined` is not equivalent to empty or null.
+- It is a special keyword in JavaScript that takes up its own memory space.
+- `undefined` is a placeholder until a value is assigned to a variable.
+
+---
+
+## Examples of undefined
+
+```js
+// Example 1
+var a; // Memory is allocated for 'a', but no value is assigned yet
+console.log(a); // Output: undefined
+
+// Example 2
+var x;
+console.log(x); // Output: undefined
+
+// Example 3
+console.log(y); // Output: ReferenceError: y is not defined
+```
+## JavaScript is a Loosely Typed / Weakly Typed Language
+
+- JavaScript is a loosely typed / weakly typed language.
+
+- It doesn't attach variables to any datatype.
+
+We can say:
+
+```js
+var a = 5;
+a = true;
+a = 'hello';
+```
