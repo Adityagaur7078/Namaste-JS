@@ -237,3 +237,68 @@ var getName = function () {
   * Debugging
   * Interviews
   * Writing clean JavaScript code
+
+
+
+
+
+
+
+
+
+# Episode 4: How Functions Work in JavaScript & Variable Environment
+
+## How Functions Work in JavaScript ❤️
+
+- Functions in JavaScript create their own execution contexts when invoked.
+- Each function has its own variable environment (Memory Component), allowing the use of local variables that are scoped within the function.
+- Variables declared within a function are accessible only within that function, unless explicitly returned or accessed from an outer scope  
+  (This is possible through the concept of closures in JavaScript – will come in later Ep).
+- JavaScript uses a process called variable hoisting, which allows functions to be called before they are defined.
+- Variable declarations are moved to the top of their respective scopes during the compilation phase.
+
+---
+
+## Variable Environment
+
+- The variable environment (Memory Component) of an execution context is the space where variables and functions are stored during runtime.
+- Each execution context has its own variable environment (Memory Component), which holds the variables and functions specific to that context.
+- When a variable is accessed, JavaScript searches for its value:
+  - First in the local variable environment
+  - Then in the outer variable environments
+  - Finally in the global variable environment
+- This hierarchical structure of variable environments allows for lexical scoping, where variables are resolved based on their proximity to the current execution context.
+
+---
+
+## Code Flow in Terms of Execution Context
+
+```js
+var x = 1;
+a();
+b(); // we are calling the functions before defining them. This will work properly, as seen in Hoisting.
+console.log(x);
+
+function a() {
+  var x = 10; // local scope because of separate execution context
+  console.log(x);
+}
+
+function b() {
+  var x = 100;
+  console.log(x);
+}
+
+// Output
+// 10
+// 100
+// 1
+
+---
+
+## Execution Context & Variable Environment Diagram
+
+![Execution Context Diagram](./assests/diagram.png)
+
+
+---
