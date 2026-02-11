@@ -524,6 +524,9 @@ c()  = [[lexical environment pointer pointing to a()]]
 a()  = [b: 10, c: {}, [lexical environment pointer pointing to GEC]]
 GEC  = [a: {}, [lexical environment pointer pointing to null]]
 ```
+![lexical-36274f688c07c76d522821c48e1180a4](https://github.com/user-attachments/assets/9c54897f-66a9-4a66-8e17-f450a9531b03)
+![lexical2-5dc78ead643a80b62dbc46552330144f](https://github.com/user-attachments/assets/ee6ce6c8-4923-48b6-bb42-1b7e7af21ae6)
+
 ## Lexical Environment and Scope Chain
 
 So, **Lexical Environment = local memory + lexical environment of its parent**.  
