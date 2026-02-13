@@ -748,6 +748,7 @@ What is a **Block**?
   console.log(b); // 100, Both b's are in separate spaces (one in Block(20) and one in Script(another arbitrary mem space)(100)). Same is also true for *const* declarations.
   ```
 
+![scope-b55ae71a98857349350a52adaeeccf17](https://github.com/user-attachments/assets/64002d7e-a567-4f7c-a8ee-d132654c44df)
 
 
 - Same logic is true even for **functions**
