@@ -451,58 +451,58 @@ Let’s observe the below examples:
 
 ---
 
-# CASE 1
+  ### CASE 1
 
-```js
-function a() {
-  console.log(b); // 10
-  // Instead of printing undefined it prints 10,
-  // So somehow this function could access the variable b outside the function scope.
-}
-var b = 10;
-a();
-```
+    ```js
+    function a() {
+      console.log(b); // 10
+      // Instead of printing undefined it prints 10,
+      // So somehow this function could access the variable b outside the function scope.
+    }
+    var b = 10;
+    a();
+    ```
 
-# CASE 2
+  ### CASE 2
 
-```js
-function a() {
-  c();
-  function c() {
-    console.log(b); // 10
-  }
-}
-var b = 10;
-a();
-```
+    ```js
+    function a() {
+      c();
+      function c() {
+        console.log(b); // 10
+      }
+    }
+    var b = 10;
+    a();
+    ```
 
-# CASE 3
+  ### CASE 3
 
-```js
-function a() {
-  c();
-  function c() {
-    var b = 100;
-    console.log(b); // 100
-  }
-}
-var b = 10;
-a();
-```
+    ```js
+    function a() {
+      c();
+      function c() {
+        var b = 100;
+        console.log(b); // 100
+      }
+    }
+    var b = 10;
+    a();
+    ```
 
-# CASE 4
+  ### CASE 4
 
-```js
-function a() {
-  var b = 10;
-  c();
-  function c() {
-    console.log(b); // 10
-  }
-}
-a();
-console.log(b); // Error, Not Defined
-```
+    ```js
+    function a() {
+      var b = 10;
+      c();
+      function c() {
+        console.log(b); // 10
+      }
+    }
+    a();
+    console.log(b); // Error, Not Defined
+    ```
 
 ## Understanding the Output
 
@@ -551,7 +551,7 @@ function a() {
 }
 // a is lexically inside global execution
 ```
-# Lexical or Static Scope
+## Lexical or Static Scope
 Lexical or Static scope refers to the accessibility of variables, functions, and objects based on their physical location in the source code.
 
 ```js
@@ -563,7 +563,7 @@ Global {
 // Inner is surrounded by lexical scope of Outer
 ```
 
-# TLDR
+## TLDR
 
 An inner function can access variables which are in outer functions even if the inner function is nested deep.
 
@@ -600,7 +600,7 @@ It looks like `let` isn't hoisted, but it is. Let's understand.
 
 ---
 
-# Temporal Dead Zone
+## Temporal Dead Zone
 **Temporal Dead Zone :** Time since when the let variable was hoisted until it is initialized some value.
 
   - So any line till before "let a = 10" is the TDZ for a
