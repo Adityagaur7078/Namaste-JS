@@ -833,6 +833,7 @@ z(); // 7 900
 - Thus In simple words, we can say:
   - **A closure is a function** that has access to its outer function scope even after the function has returned. Meaning, A closure can remember and access variables and arguments reference of its outer function even after the function has returned.
 
+![closure-0b8cc2705d6209464e867f271a00c6ac](https://github.com/user-attachments/assets/df0b6b25-b622-44e0-a50c-e021060adbe2)
 
 
 - Advantages of Closure:
