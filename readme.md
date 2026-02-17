@@ -1466,7 +1466,7 @@ attachEventList();
 * But browser has many other superpowers - Local storage space, Timer, place to enter URL, Bluetooth access, Geolocation access and so on.
 * Now JS needs some way to connect the callstack with all these superpowers. This is done using Web APIs.
 
-
+![eventloop1-5daea0168059d1d535f5f7038a739dba](https://github.com/user-attachments/assets/fe45695b-ac02-4021-a1ff-0af0c7b4aa3c)
 
 ---
 
@@ -1474,7 +1474,7 @@ attachEventList();
 
 None of the below are part of Javascript! These are extra superpowers that browser has. Browser gives access to JS callstack to use these powers.
 
-
+![eventloop2-a32e841c3d1d3c52669c3454f4ba99eb](https://github.com/user-attachments/assets/58e759d6-2e52-4aa7-945f-262630fd338f)
 
 - setTimeout(), DOM APIs, fetch(), localstorage, console (yes, even console.log is not JS!!), location and so many more.
 
@@ -1494,7 +1494,7 @@ None of the below are part of Javascript! These are extra superpowers that brows
 
 ## Let's undertand the below code and its explaination:
 
-
+![eventloop3-70f56aaeaad17ca89fde956a74ee97fa](https://github.com/user-attachments/assets/63645567-2af8-4ad1-abad-8bdb16d6ca2e)
 
 ```js
 console.log('start');
@@ -1523,13 +1523,14 @@ Q: How after 5 secs timer is console?
 * Event loop keep checking the callback queue, and see if it has any element to puts it into call stack. It is like a gate keeper.
 * Once cb() is in callback queue, eventloop pushes it to callstack to run. Console API is used and log printed
 
-
+![eventloop4-8e04fda51ca18d88b3843e6e16ee4d2f](https://github.com/user-attachments/assets/60951ed9-1578-4450-a51c-9080b8bfb420)
 
 ---
 
 ## Another example to understand Eventloop & Callback Queue.
 See the below Image and code and try to understand the reason:
 
+![eventloop5-c490492e88d4f0a810e3cd2e8d202080](https://github.com/user-attachments/assets/535fe9ee-79b8-4029-a187-958737b6cbe3)
 
 Explaination?
 ```js
@@ -1578,12 +1579,12 @@ Code Explaination:
 * In console, first Start and End are printed in console. First cbF goes in callstack and "CB Netflix" is printed. cbF popped from callstack. Next cbT is removed from callback Queue, put in Call Stack, "CB Timeout" is printed, and cbT removed from callstack.
 * See below Image for more understanding.
 
-
+![eventloop6-f8b232d201a82777b680dffbf5d3ccdf](https://github.com/user-attachments/assets/feeaa979-53fa-497f-88cd-da446f4df1c0)
 
 ---
 ## Microtask Priority Visualization
 
-
+![microtask-64675cdce0c256cdfebffdc3cac60016](https://github.com/user-attachments/assets/10793736-778d-454b-9f2f-fb33af7945b5)
 
 ## What enters the Microtask Queue ?
 
@@ -1609,6 +1610,11 @@ Code Explaination:
 
 ## Observation of Eventloop, Callback Queue & Microtask Queue [GiF]
 
-
+![microtask1-d3aad8c29c0a29ac35ee2dac26c8cd57](https://github.com/user-attachments/assets/1576d82e-7103-4d32-ad12-a1aeb3bb4c17)
+![microtask2-5b8a5d1ff9a7257b3f7818a43ad7bd18](https://github.com/user-attachments/assets/435030a2-f5e7-4fa8-864e-e99d492a4ec2)
+![microtask3-a2c6b052fe90284a88f725ac0037a3f1](https://github.com/user-attachments/assets/6a0b8dea-ad8e-4b2f-9c81-284eb0f0fbdd)
+![microtask4-934ae4c9468b589dad16549b47403751](https://github.com/user-attachments/assets/cfc73eee-8fb3-42e8-9f28-d2d0fed05df4)
+![microtask5-a3cdebd52874eb1b0d19dca5dee81bf6](https://github.com/user-attachments/assets/268efc32-4121-4b38-9097-defdb7b1e3da)
+![microtask6-5d251829eb7a4b403f6910fed70828f6](https://github.com/user-attachments/assets/ec06ac65-8261-48f4-8e7e-1b7f650d079c)
 
 ---
