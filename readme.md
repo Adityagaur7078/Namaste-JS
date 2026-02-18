@@ -1664,6 +1664,8 @@ Code Explaination:
 
 - Needs 2 components ie. Memory heap(place where all memory is stored) and Call Stack(same call stack from prev episodes). There is also a garbage collector. It uses an algo called **Mark and Sweep**.
 
+![jsengine-6902ed7409b617c6b9c0b8813ac6619a](https://github.com/user-attachments/assets/58482838-e8e8-4a54-8ca2-8471c983bc6f)
+![jsenginegif-08a5f0882879cec7e21ab62c123e2afe](https://github.com/user-attachments/assets/d7fba9cd-7da1-4934-8622-721b7b641ff7)
 
 ---
 
@@ -1673,5 +1675,6 @@ Code Explaination:
 
 * v8 architecture:
 
+<img width="640" height="480" alt="jsengine-423c0e480647e72e3055af3f385e5f1a" src="https://github.com/user-attachments/assets/a9aecb24-da34-4cc5-99ef-ff2dbdb5eec1" />
 
 ---
