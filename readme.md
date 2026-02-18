@@ -1725,6 +1725,7 @@ console.log('End');
 
 * In below example, we are blocking the main thread. Observe Questiona and Output.
 
+![settimeout1-60ce4b4752fcb7534e73b09a10c44294](https://github.com/user-attachments/assets/6aec29c9-aea1-4d58-a940-c536216ab80d)
 
 * setTimeout guarantees that it will take at least the given timer to execute the code.
 
