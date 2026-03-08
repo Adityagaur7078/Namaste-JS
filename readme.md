@@ -1,6 +1,6 @@
 # SEASON 1
 # Episode 1: How JavaScript Works!
-
+![1772699589810](https://github.com/user-attachments/assets/071e06f6-855c-40b4-8bf1-62e13e86adc2)
 ## Execution Context
 
 - Everything in JavaScript happens inside the **execution context**.
@@ -36,7 +36,8 @@ JavaScript is a **synchronous single-threaded language**.
 - It proceeds to the next line only when the **current line has finished executing**.
 
 ### Single-Threaded
-- JavaScript can execute **only one command at a time**.
+ JavaScript can execute **only one command at a time**.
+-
 
 
 
